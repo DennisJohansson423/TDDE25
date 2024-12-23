@@ -1,0 +1,41 @@
+User manual Capture The Flag
+
+För att starta Capture the flag behöver man köra kommandot python3 ctf.py i terminalen. Man behöver 
+även stå i den korretka mappen som filen ctf.py är sparad i för att få med de funktioner och 
+bibliotek som behövs för att köra spelet. För att starta spelet behöver man även välja om man vill spela
+multiplayer eller singelplayer. Det gör man genom att skriva --singelplayer eller --multiplayer i terminalen 
+direkt efter python3 ctf.py. Man måste även välja vilket win condition man vill ha och det gör man genom att
+välja mellan "score limit", "time limit" och "rounds limit". För att välja skriver man in antingen --first-to, 
+--best-of eller --time i terminalen efter man skrivit in vilken spelvariant man vill köra. Man kan även välja 
+vilken map man vill spela genom att ändra i ctf.py på rad 38 där man kan väljna mellan map0, map1 och map2. 
+Man kan även välja att köra map0 i json format eller txt format genom att skriva --map --json map0.json, 
+det ska man skriva in efter man skrivit in vilken win condition man vill ha. 
+När spelet sedan har startats så ska det komma upp en spelplan på skärmen och spelet startar på en gång.
+
+De kontroller som vi har implementerat i spelet är kontroller för att flytta runt sin
+pansarvagn. För att flytta pansarvagnen använder man piltangenterna höger, vänster, upp, ner och för att skjuta
+trycker man på enter. Om man väljer att spela multiplayer kontrollerar den andra spelaren sin pansarvagn med 
+tangenterna W (fram), A (vänster), S (back), D (höger) och för att sjuta trycker man på spacebaren.
+
+Vi har valt att implementera fem olika features i vårat spel. De fem featursen är "Counting score", 
+"Hot seat multiplayer", "Read maps from a text file", "Read maps fram a json file" och "Additional win condition".
+"Counting score" är en feature som håller räkningen på antalet poäng som varje spelare har och printar ut
+det i terminalen medans man spelar. "Hot seat multiplayer" är en feature som gör det möjligt att välja
+om man vill spela singelplayer eller multiplayer. "Read maps from a text file" är en feature som gör det 
+möjligt att kunna läsa in maps som är i txt format och kunna göra om nuvarande maps till txt format. 
+"Read maps from o json file" är en feature som fungerar på samma sätt som ovan, men den kan istället läsa
+in maps i json format och göra om nuvarande maps till det formatet. "Additional win condition" är en feature 
+som gör det möjligt att kunna välja vilken typ av mål man ska uppnås för att vinna spelet. De tre olika 
+varianterna man kan välja mellan är en "score limit", "time limit" och "rounds limit". "Score limit" avlsutar
+spelet när en spelare har nått ett visst antal poäng. "Time limit" avslutar spelet när en bestämd tid är slut
+och spelaren med flerst poäng vinner. "Rounds limit" avslutar spelet när ett visst antal rundor har spelats och
+spelaren med flest poäng vinner då.
+
+Vår huvudsakliga fil för projektet är ctf.py och det är den som körs för att köra spelet. I den filen 
+importeras ai.pi, images.py, gameobjects.py samt maps.py. I dessa filer finns många hjälpfunktioner som 
+ska användas under utvecklingen av spelet. Ai.py innehåller funktioner som används för att datorn ska 
+kunna köra spelet och att spelaren där med har motståndare att spela mot. Images.py innehåller alla bilder 
+som används när spelet byggs upp. Som till exempel pansarvagnarna, flaggan, gräs med mera. Gameobjects.py 
+innehåller funktioner som hjälper till att styra och implementera objekt. Maps.py innehåller olika spelplaner 
+som spelet kan köras med. När dessa filer importeras i ctf kör vi import <filnamn> och därmed måste filnamnet
+skrivas innan funktioner/variabler används från filen.
